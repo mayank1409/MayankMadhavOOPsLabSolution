@@ -12,8 +12,20 @@ public class TestApplication {
 	private static final String COMPANY_NAME = "GL";
 	private static Employee employee = null;
 	private static String dept = null;
+	private static String firstName = null;
+	private static String lastName = null;
 
 	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		
+		System.out.print("Enter First Name :");
+		firstName = scanner.next().toLowerCase();
+		System.out.print("Enter Last Name :");
+		lastName = scanner.next().toLowerCase();
+		
+		employee = new Employee(firstName, lastName);
 		
 		System.out.println("Please enter the department from the following");
 		System.out.println("1. Technical");
@@ -21,13 +33,11 @@ public class TestApplication {
 		System.out.println("3. Human Resources");
 		System.out.println("4. Legal");
 
-		Scanner scanner = new Scanner(System.in);
 
 		int choice = scanner.nextInt();
 
 		switch (choice) {
 		case 1:
-			employee = new Employee("harshit", "choudhary");
 			dept = "tech";
 			credentialsService.showCredentials(employee,
 					credentialsService.generateEmailAddress(employee, COMPANY_NAME, dept),
@@ -35,7 +45,6 @@ public class TestApplication {
 			break;
 
 		case 2:
-			employee = new Employee("harshit", "choudhary");
 			dept = "admin";
 			credentialsService.showCredentials(employee,
 					credentialsService.generateEmailAddress(employee, COMPANY_NAME, dept),
@@ -43,7 +52,6 @@ public class TestApplication {
 			break;
 
 		case 3:
-			employee = new Employee("harshit", "choudhary");
 			dept = "hr";
 			credentialsService.showCredentials(employee,
 					credentialsService.generateEmailAddress(employee, COMPANY_NAME, dept),
@@ -51,7 +59,6 @@ public class TestApplication {
 			break;
 
 		case 4:
-			employee = new Employee("harshit", "choudhary");
 			dept = "legal";
 			credentialsService.showCredentials(employee,
 					credentialsService.generateEmailAddress(employee, COMPANY_NAME, dept),

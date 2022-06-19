@@ -6,7 +6,7 @@ import com.gl.departments.model.Employee;
 import com.gl.departments.service.CredentialsService;
 
 public class CredentialsServiceImpl implements CredentialsService {
-
+	
 	@Override
 	public String generatePassword() {
 		String capitalCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
